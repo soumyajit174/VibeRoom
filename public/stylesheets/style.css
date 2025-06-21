@@ -1,0 +1,190 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #030815;
+    background-image: 
+    linear-gradient(0deg, rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 50px 50px; 
+    backdrop-filter: blur(8px);
+}
+
+.container{
+    background-color: #222c40;
+    backdrop-filter: blur(8px);
+
+    width: 20vw;
+    height: auto;
+    min-width: 280px;
+    min-height: 300px;
+    border: 2px solid black;
+    border-radius: 13px;
+    -webkit-border-radius: 13px;
+    -moz-border-radius: 13px;
+    -ms-border-radius: 13px;
+    -o-border-radius: 13px;
+}
+.tab{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 2vh;
+    margin-bottom: 1.2vh;
+   
+}
+.tab button{
+    font-size: 90%;
+    border: none;
+    padding: 1vw;
+    font-weight: 550;
+    background-color: white;
+    
+}
+#createTab{
+      border-bottom: 3px solid  #5bbbff;
+      cursor: pointer;
+      color: #5bbbff;
+      background-color: #222c40
+}
+#joinTab{
+    cursor: pointer;
+    color: #5b74a9;
+    background-color: #222c40
+}
+
+
+/*      CREATE ROOM     */
+#createRoomForm{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#createRoomForm h2 {
+    color: white;
+    font-size: 1.7vw;
+    text-align: center;
+    margin: 1.2vh;
+}
+#createName{
+    padding: 2%;
+    margin: 1.2vh;
+    border-radius:5% ;
+    -webkit-border-radius:5% ;
+    -moz-border-radius:5% ;
+    -ms-border-radius:5% ;
+    -o-border-radius:5% ;
+}
+#createRoomForm button{
+    border-radius: 6px;
+    background-color: #2563EB;
+    transition: background 0.3s ease;
+    background: linear-gradient(to right, #2563EB, #00CFFD);
+    color: white;
+
+    margin: 1.2vh;
+    padding: 2%;
+    cursor: pointer;
+    border-radius:5% ;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    -webkit-transition: background 0.3s ease;
+    -moz-transition: background 0.3s ease;
+    -ms-transition: background 0.3s ease;
+    -o-transition: background 0.3s ease;
+}
+
+
+/*      JOIN ROOM     */
+
+#joinRoomForm{
+    display: none;
+    height: 100%;
+    flex-direction: column;
+}
+#joinRoomForm h2 {
+    color: white;
+    font-size: 1.7vw;
+    text-align: center;
+    margin: 1.2vh;
+}
+#roomNumber{
+    margin: 1.2vh;
+    padding: 2%;
+       border-radius:5% ;
+      -webkit-border-radius:5% ;
+      -moz-border-radius:5% ;
+      -ms-border-radius:5% ;
+      -o-border-radius:5% ;
+}
+#joinName{
+    margin: 1.2vh;
+    padding: 2%;
+       border-radius:5% ;
+      -webkit-border-radius:5% ;
+      -moz-border-radius:5% ;
+      -ms-border-radius:5% ;
+      -o-border-radius:5% ;
+}
+#joinRoomForm button{
+    border-radius: 6px;
+    background-color: #2563EB;
+    transition: background 0.3s ease;
+    background: linear-gradient(to right, #2563EB, #00CFFD);
+     color: white;
+     margin: 1.2vh;
+     padding: 2%;
+      cursor: pointer;
+       border-radius:5% ;
+      -webkit-border-radius:5% ;
+      -moz-border-radius:5% ;
+      -ms-border-radius:5% ;
+      -o-border-radius:5% ;
+    
+}
+
+/*-------------------hover-------------------------*/
+
+
+
+
+/*-----------Animation----------------------------*/
+
+
+
+
+
+/*---------media query for 918px-------------------*/
+@media (max-width:918px) {
+     #createRoomForm h2{
+         font-size: 2.4vw;  
+     }
+    #joinRoomForm h2 {
+        font-size: 2.4vw;           
+    }
+     .container {
+    width: 37vw;              
+    height: auto;           
+    min-height: 300px;
+  }
+}
+
+/*---------------media query for 918px----------------*/
+@media (max-width:550px) {
+     #createRoomForm h2{
+         font-size: 5.2vw;  
+     }
+    #joinRoomForm h2 {
+        font-size: 5.2vw;           
+    }
+}
