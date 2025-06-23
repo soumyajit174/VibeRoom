@@ -3,7 +3,7 @@ const createBtn = document.querySelector("#createTab");
 const joinBtn = document.querySelector("#joinTab");
 const createRoom = document.querySelector("#createRoomForm");
 const createJoin = document.querySelector("#joinRoomForm");
-//adding eventLinstner
+
 //appear joinRoom and diappering create room
 joinBtn.addEventListener("click",function(){
     createJoin.style.display = "flex";
@@ -21,3 +21,6 @@ createBtn.addEventListener("click",function(){
     createBtn.style.color=" #5bbbff";
     joinBtn.style.color=" #5b74a9";
 })
+
+
+

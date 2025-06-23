@@ -8,7 +8,7 @@ app.set('view engine','ejs');
 
 //routing
 app.get("/", function(req, res) {
-    res.render("chat");
+    res.render("index");
 });
 
 app.get("/chat",function(req,res){
