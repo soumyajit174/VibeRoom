@@ -2,8 +2,157 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: poppins;
 }
+
 html,body{
-    
+    width: 100%;
+    height: 100%;
+}
+/* --------------------MAIN CONATAINER SECTION--------------------*/
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.sidebarpanel{
+    height: 100%;
+    width: 50px;
+    background-color: black;
+    border-top: 2px solid black;
+    padding: 1.4vh 1.8vh;
+    line-height: 11vh;
+}
+/*--------------------- Side bar CONATAINER SECTION--------------------*/
+.sidebar{
+    height: 100%;
+    width: 20%;
+    background-color: #121212;
+    border: 2px solid black;
+    padding: 2vw;
+    letter-spacing: -1px;
+    line-height: 6vh;
+}
+
+/*---------------------- Whole chat area CONATAINER SECTION-------------------*/
+.chatsection{
+    height: 100%;
+    width: 80%;
+    background-color: #030815; 
+    display: flex;
+    flex-direction: column;
+}
+/*---------------------- NAV BAR  SECTION-------------------*/
+.chatnav{
+    width: 100%;
+    height: 10%;
+    border-bottom: 2px solid #121212;
+    background-color:black;
+    padding: 20px ;
+    display: flex;
+    justify-content: end;
+}
+/*---------------------- chat body SECTION-------------------*/
+.chatbody{
+    width: 100%;
+    height: 80%;
+    background-color: black; 
+}
+/*---------------------- NAV BAR  SECTION-------------------*/
+.chatinput{
+    width: 100%;
+    height: 10%;
+    background-color: #121212;
+    padding: 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 15px;
+}
+/*chatting area of the app*/
+#textbox{
+    width: 100%;
+    height: 80%;
+    border-radius: 20px;
+    padding: 0px 10px;
+}
+
+/* sidebar of the chatroom*/
+#searchbar{
+    padding: 0.5vh 2.5vh;
+    border-radius: 1vh;
+    border-width: 1px;
+    margin-left: 1vh;
+}
+#searchbaricon{
+    display: flex;
+    position: relative;
+    width: fit-content;
+}
+.sidebar h2{
+    font-size: 3.5vh;
+    margin-left: 1vh;
+    color: white;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+/* icons pack*/
+
+#sticker{
+    font-size: 30px;
+    color: gray;
+    cursor: pointer;
+    margin-right: 10px;
+}
+#attachment{
+    color: gray;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 30px
+}
+#sendbutton{
+    color: gray;
+    cursor: pointer;
+    font-size: 30px;
+    margin-left: 10px;
+}
+#mapicon{
+   color: gray;
+   cursor: pointer;
+   font-size: 30px;
+}
+#voicecall{
+   color: gray;
+   cursor: pointer;
+   font-size: 30px;
+   margin-left: 20px;
+}
+#searchicon{
+    color: black;
+    font-size: 2vh;
+    position: absolute;
+    left: 19px;
+    top: -11px;
+    transform: translate(-50%);
+    pointer-events: none;
+}
+#chaticon{
+    font-size: 3.5vh;
+    color: gray;
+}
+#settingicon{
+    font-size: 3.5vh;
+    color: gray;
+}
+#darkmodeicon{
+    font-size: 3.5vh;
+    color: gray;
+}
+/* buttons*/
+#logoutbutton{
+    background-color: black;
+    color: gray;
+    border-radius: 50%;
+    padding: 0.2vh 0.3vh;
+    position: absolute;
+    top: 90%;
+    left: 1%;
 }
