@@ -1,34 +1,30 @@
 const express = require("express");
 const path = require("path");
-const { customAlphabet } = require("nanoid"); 
+const http = require("http");
+const { customAlphabet } = require("nanoid");
+const { Server } = require("socket.io");
+
 const app = express();
+const server = http.createServer(app);
+const io = new Server(server);
 const port = 8000;
 
+// setting ejs
+app.use(express.static(path.join(__dirname, 'public')));
+app.set('view engine', 'ejs');
 
-//setting ejs
-app.use(express.static(path.join(__dirname,'public')));
-app.set('view engine','ejs');
-
-
-// Body parsers (for form and JSON)
+// Body parsers
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 
 
-
-//creating roomID
-   const generateRoomId = ()=>{
-            const alphabet = customAlphabet('abcdefghijklmnpqrstuvwxyz', 2);
-            const digits = customAlphabet('123456789',2);
-
-            const roomIdAlphabet= alphabet();
-            const roomIdDigits = digits();
-            const AlphanumericID = roomIdAlphabet+roomIdDigits;
-            return AlphanumericID;
-   }
-
-
+// generating room ID
+const generateRoomId = () => {
+    const alphabet = customAlphabet('abcdefghijklmnpqrstuvwxyz', 2);
+    const digits = customAlphabet('123456789', 2);
+    return alphabet() + digits();
+};
 
 
 //routing
@@ -44,18 +40,33 @@ app.post("/chat", (req, res) => {
     }else{
         roomIDCreated = roomID;
     }
-    
-
     // Send the room ID back so the frontend 
     res.json({roomID: roomIDCreated });
 });
+
 
 app.get("/chat/:roomID",(req,res)=>{
     res.render("chat");
 })
 
+io.on("connection", (socket) => {
+    console.log("User connected:", socket.id);
 
-//listining
-app.listen(port,()=>{
-     console.log(`Server started at http://localhost:${port}`);
-})
+    // Listen for chat messages from clients
+    socket.on("chat", (data) => {
+        // Add sender's socket ID to data
+        data.id = socket.id;
+
+        // Broadcast message to all clients (including sender)
+        io.emit("chat", data);
+    });
+
+    socket.on("disconnect", () => {
+        console.log("User disconnected:", socket.id);
+    });
+});
+
+// Start the server
+server.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}`);
+});
