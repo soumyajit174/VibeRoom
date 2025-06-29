@@ -7,11 +7,16 @@
 html,body{
     width: 100%;
     height: 100%;
+    overflow-y: auto;
+   overflow-x: hidden;
+
+   
 }
 /* --------------------MAIN CONATAINER SECTION--------------------*/
 .container {
     width: 100%;
-    height: 100%;
+     height: 100%;
+     min-height: 100vh;
     display: flex;
 }
 .sidebarpanel{
@@ -26,11 +31,11 @@ html,body{
 .sidebar{
     height: 100%;
     width: 20%;
-    background-color: #121212;
-    border: 2px solid black;
+    background-color: #073b4c;
     padding: 2vw;
     letter-spacing: -1px;
     line-height: 6vh;
+
 }
 
 /*---------------------- Whole chat area CONATAINER SECTION-------------------*/
@@ -45,23 +50,30 @@ html,body{
 .chatnav{
     width: 100%;
     height: 10%;
-    border-bottom: 2px solid #121212;
-    background-color:black;
+    background-color:#0077b6;
     padding: 20px ;
     display: flex;
     justify-content: end;
 }
 /*---------------------- chat body SECTION-------------------*/
 .chatbody{
+    padding: 3vh;
     width: 100%;
     height: 80%;
-    background-color: black; 
+    background-color:#caf0f8; 
+   overflow-y: auto;
+   overflow-x: hidden;
+
+    
 }
 /*---------------------- NAV BAR  SECTION-------------------*/
 .chatinput{
+     position: sticky;
+    bottom: 0;
+    z-index: 10;
     width: 100%;
     height: 10%;
-    background-color: #121212;
+    background-color: #03045e;
     padding: 20px 20px;
     display: flex;
     justify-content: space-between;
@@ -72,7 +84,7 @@ html,body{
     width: 100%;
     height: 80%;
     border-radius: 8px;
-    padding: 2vh;
+    padding: 2.2vh;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
     -ms-border-radius: 8px;
@@ -83,17 +95,16 @@ html,body{
 #searchbar{
     padding: 1vh;
     padding-left: 4px;
-    border-radius: 2px;
+    border-radius: 7px;
     border-width: 1px;
-    margin-left: 1vh;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    -ms-border-radius: 2px;
-    -o-border-radius: 2px;
+    margin:1vw;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
 }
 #searchbaricon{
     display: flex;
-
     width: fit-content;
 }
 .sidebar h2{
@@ -107,61 +118,98 @@ html,body{
 
 #sticker{
     font-size: 30px;
-    color: gray;
+    color: #90e0ef;
     cursor: pointer;
     margin-right: 10px;
 }
 #attachment{
-    color: gray;
+    color: #90e0ef;
     cursor: pointer;
     margin-right: 10px;
     font-size: 30px
 }
 #sendbutton{
-    color: gray;
+    color: #90e0ef;
     cursor: pointer;
     font-size: 30px;
     margin-left: 10px;
 }
 #mapicon{
-   color: gray;
+   color:#90e0ef;
    cursor: pointer;
    font-size: 30px;
 }
 #voicecall{
-   color: gray;
+   color: #90e0ef;
    cursor: pointer;
    font-size: 30px;
    margin-left: 20px;
 }
 #searchicon{
-    color: black;
-    font-size: 2vh;
-    position: absolute;
-    left: 19px;
-    top: -11px;
-    transform: translate(-50%);
-    pointer-events: none;
-}
+    color: #0077b6;
+    font-size: 2vw;
+    
+} 
 #chaticon{
     font-size: 3.5vh;
-    color: gray;
+    color: #90e0ef;
 }
 #settingicon{
     font-size: 3.5vh;
-    color: gray;
+    color: #90e0ef;
 }
 #darkmodeicon{
     font-size: 3.5vh;
-    color: gray;
+    color: #90e0ef;
 }
 /* buttons*/
 #logoutbutton{
     background-color: black;
-    color: gray;
+    color: #90e0ef;
     border-radius: 50%;
-    padding: 0.2vh 0.3vh;
+    padding: 1vh;
     position: absolute;
     top: 90%;
     left: 1%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+@media (max-width:1200px) {
+    .sidebar{
+        width:25vw;
+    }
+}
+
+@media (max-width:900px) {
+    .sidebar{
+        width:30vw;
+    }
+}
+
+@media (max-width:700px) {
+    .sidebar{
+        width:35vw;
+    }
+    #searchbar{
+        margin:0.3vw;
+        width: 90%;
+    }
+}
+
+
+@media (max-width:600px) {
+    .sidebar{
+        width:100vw;
+       min-height: 100vh;
+    }
+    .chatsection{
+        display: none;
+    }
+    #searchbar{
+        width: 70vw;
+        padding: 1.5vh;
+    }
 }
