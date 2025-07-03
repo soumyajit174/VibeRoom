@@ -1,41 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VibeRoom</title>
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
-     <link rel="stylesheet" href="/stylesheets/chat.css">
-
-      <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playwrite+NZ:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tiro+Devanagari+Hindi:ital@0;1&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
-    </style>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VibeRoom</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="/stylesheets/chat.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+  </style>
 </head>
 <body>
-
-
-    <div class="container">
-        <div class="sidebarpanel"> 
-            <i id="chaticon" class="ri-chat-1-line"></i> <br>
-            <i id="settingicon" class="ri-settings-2-line"></i> <br>
-            <i id="darkmodeicon" class="ri-moon-line"></i>
-            <button id="logoutbutton"><i class="ri-logout-circle-line"></i></button>
-        </div>
-        
-        <div class="sidebar"> 
-            <h2>Chats</h2>
-           <div id="searchbaricon"><i id="searchicon" class="ri-search-line"></i><input type="search" placeholder="search chat" id="searchbar"></div>
-        </div>
-
-        <div class="chatsection">
-            <div class="chatnav"><i id="mapicon" class="ri-map-pin-line"></i><i id="voicecall"  class="ri-phone-line"></i></div>
-            <div class="chatbody"></div>
-            <div class="chatinput"> <i id="sticker" class="ri-emoji-sticker-line"></i> <i id="attachment" class="ri-attachment-line"></i> <input type="text" placeholder="Message" id="textbox"> <i id="sendbutton" class="ri-send-plane-2-line"></i> </div>
-        </div>
+  <div class="container">
+    <div class="sidebarpanel"> 
+      <i id="chaticon" class="ri-chat-1-line"></i> <br>
+      <i id="settingicon" class="ri-settings-2-line"></i> <br>
+      <i id="darkmodeicon" class="ri-moon-line"></i>
+      <button id="logoutbutton"><i class="ri-logout-circle-line"></i></button>
     </div>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="/javascripts/chat.js"></script>
-</body>
 
+    <div class="sidebar"> 
+      <h2>Chats</h2>
+      <div id="searchbarcontainer">
+        <i id="searchicon" class="ri-search-line"></i>
+        <input type="search" placeholder="Search chat" id="searchbar">
+      </div>
+      <div class="room-dynamic">Public Room</div>
+    </div>
+
+    <div class="chatsection">
+      <div class="chatnav">
+        <i id="mapicon" class="ri-map-pin-line"></i>
+        <i id="voicecall" class="ri-phone-line"></i>
+      </div>
+      <div class="chatbody"></div>
+      <div class="chatinput">
+        <i id="sticker" class="ri-emoji-sticker-line"></i>
+        <i id="attachment" class="ri-attachment-line"></i>
+        <input type="text" placeholder="Message" id="textbox">
+        <i id="sendbutton" class="ri-send-plane-2-line"></i>
+      </div>
+    </div>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/javascripts/chat.js"></script>
+</body>
 </html>

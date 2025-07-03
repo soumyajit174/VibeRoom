@@ -1,6 +1,11 @@
 const sendButton = document.querySelector("#sendbutton");
 const messageInput = document.querySelector('#textbox');
 const messageContainer = document.querySelector('.chatbody');
+const roomDynamic = document.querySelector('.room-dynamic');
+const container = document.querySelector('.container');
+const  slidebar = document.querySelector('.slidebar');
+
+
 
 // Initialize socket connection
 const socket = io();
@@ -47,4 +52,16 @@ socket.on("chat", ({ text, id }) => {
 // Send message with Enter key
 messageInput.addEventListener("keyup", (e) => {
     if (e.key === "Enter") sendButton.click();
+});
+
+
+//mobile handling
+document.addEventListener('DOMContentLoaded', () => {
+    if(window.innerWidth <= 600){
+        roomDynamic.addEventListener('click', () => {
+           sidebar.style.display = 'none';
+            chatsection.style.display = 'flex';
+            
+        });
+    }
 });

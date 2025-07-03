@@ -39,3 +39,6 @@ joinBtnLink.addEventListener("click", function () {
         window.location.href = `/chat/${data.roomID}`;
     });
 });
+
+
+

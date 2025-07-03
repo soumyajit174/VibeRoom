@@ -1,215 +1,221 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html,body{
+html, body {
     width: 100%;
     height: 100%;
     overflow-y: auto;
-   overflow-x: hidden;
-
-   
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
 }
-/* --------------------MAIN CONATAINER SECTION--------------------*/
+
+/* MAIN CONTAINER */
 .container {
     width: 100%;
-     height: 100%;
-     min-height: 100vh;
+    height: 100%;
+    min-height: 100vh;
     display: flex;
 }
-.sidebarpanel{
+
+/* Sidebar icon panel */
+.sidebarpanel {
     height: 100%;
     width: 50px;
-    background-color: black;
-    border-top: 2px solid black;
+    background-color: #F0F2F5; /* changed from black to light grey for aesthetic */
     padding: 1.4vh 1.8vh;
     line-height: 11vh;
 }
-/*--------------------- Side bar CONATAINER SECTION--------------------*/
-.sidebar{
+
+/* Sidebar area */
+.sidebar {
     height: 100%;
     width: 20%;
-    background-color: #073b4c;
+    background-color: #FFFFFF; /* clean white */
     padding: 2vw;
     letter-spacing: -1px;
     line-height: 6vh;
 
+    /* Improved right separator for aesthetic clarity */
+    border-right: 1px solid #E0E0E0; /* soft light grey instead of black */
+    box-shadow: 3px 0 8px rgba(0, 0, 0, 0.04); /* subtle depth while keeping separation clear */
 }
-
-/*---------------------- Whole chat area CONATAINER SECTION-------------------*/
-.chatsection{
-    height: 100%;
-    width: 80%;
-    background-color: #030815; 
-    display: flex;
-    flex-direction: column;
-}
-/*---------------------- NAV BAR  SECTION-------------------*/
-.chatnav{
-    width: 100%;
-    height: 10%;
-    background-color:#0077b6;
-    padding: 20px ;
-    display: flex;
-    justify-content: end;
-}
-/*---------------------- chat body SECTION-------------------*/
-.chatbody{
-    padding: 3vh;
-    width: 100%;
-    height: 80%;
-    background-color:#caf0f8; 
-   overflow-y: auto;
-   overflow-x: hidden;
-
-    
-}
-/*---------------------- NAV BAR  SECTION-------------------*/
-.chatinput{
-     position: sticky;
-    bottom: 0;
-    z-index: 10;
-    width: 100%;
-    height: 10%;
-    background-color: #03045e;
-    padding: 20px 20px;
-    display: flex;
-    justify-content: space-between;
-    border-radius: 15px;
-}
-/*chatting area of the app*/
-#textbox{
-    width: 100%;
-    height: 80%;
-    border-radius: 8px;
-    padding: 2.2vh;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    -ms-border-radius: 8px;
-    -o-border-radius: 8px;
-}
-
-/* sidebar of the chatroom*/
-#searchbar{
-    padding: 1vh;
-    padding-left: 4px;
+.room-dynamic{
+    font-weight: 300px;
+    /* border: 0.2px solid black; */
+    text-align: center;
+    cursor: pointer;
     border-radius: 7px;
-    border-width: 1px;
-    margin:1vw;
     -webkit-border-radius: 7px;
     -moz-border-radius: 7px;
     -ms-border-radius: 7px;
     -o-border-radius: 7px;
+ box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+ margin-top: 2vh;
 }
-#searchbaricon{
-    display: flex;
-    width: fit-content;
+.room-dynamic:hover{
+    background-color: #928d8dee;
+    color: white;
 }
-.sidebar h2{
+
+
+.sidebar h2 {
     font-size: 3.5vh;
     margin-left: 1vh;
-    color: white;
+    color: #2E2E2E; /* changed from white to dark grey for readability */
     font-weight: 500;
     letter-spacing: 2px;
 }
-/* icons pack*/
 
-#sticker{
-    font-size: 30px;
-    color: #90e0ef;
-    cursor: pointer;
-    margin-right: 10px;
+/* Search bar container */
+#searchbarcontainer {
+    position: relative;
+    width: 100%;
+    margin-top: 1vh;
 }
-#attachment{
-    color: #90e0ef;
-    cursor: pointer;
-    margin-right: 10px;
-    font-size: 30px
+
+#searchbarcontainer i {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    color: #556EE6; /* changed from #0077b6 to soft accent */
+    pointer-events: none;
+    font-size: 1.2rem;
 }
-#sendbutton{
-    color: #90e0ef;
+
+#searchbar {
+    outline: none; 
+    width: 100%;
+    padding: 1vh 1vh 1vh 35px;
+    border-radius: 7px;
+    border: 1px solid #DDD; 
+    border-bottom: 2px solid rgb(53, 88, 174);
+    margin: 1vw 0;
+    font-size: 1rem;
+    background-color: #FFFFFF; /* ensure clean white */
+}
+
+/* Chat section area */
+.chatsection {
+    height: 100%;
+    width: 80%;
+    background-color: #F9FAFB; /* changed from #030815 to light soft background */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Chat navbar */
+.chatnav {
+    width: 100%;
+    height: 10%;
+    background-color: #556EE6; /* changed from #0077b6 to soft blue accent */
+    padding: 20px;
+    display: flex;
+    justify-content: end;
+}
+
+/* Chat body area */
+.chatbody {
+    padding: 3vh;
+    width: 100%;
+    height: 80%;
+    background-color: #FFFFFF; /* changed from #caf0f8 to clean white */
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Chat input area */
+.chatinput {
+    border: none;
+    outline: none; 
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+    width: 100%;
+    height: 10%;
+    background-color: #FFFFFF; /* changed from #03045e to white for clean look */
+    padding: 2vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #DDD; /* clean separation instead of border-radius */
+}
+
+#textbox {
+    width: 100%;
+    height: 80%;
+    border-radius: 8px;
+    padding: 2.5vh;
+    border: 1px solid #DDD;
+    background-color: #FFFFFF;
+    font-size: 1rem;
+}
+
+/* Icons */
+#sticker, #attachment, #sendbutton, #mapicon, #voicecall,
+#chaticon, #settingicon, #darkmodeicon {
+    color: #010209; /* unified accent color */
+    font-size: 26px;
     cursor: pointer;
-    font-size: 30px;
+}
+
+#sendbutton {
     margin-left: 10px;
 }
-#mapicon{
-   color:#90e0ef;
-   cursor: pointer;
-   font-size: 30px;
+
+#voicecall {
+    margin-left: 20px;
 }
-#voicecall{
-   color: #90e0ef;
-   cursor: pointer;
-   font-size: 30px;
-   margin-left: 20px;
-}
-#searchicon{
-    color: #0077b6;
-    font-size: 2vw;
-    
-} 
-#chaticon{
-    font-size: 3.5vh;
-    color: #90e0ef;
-}
-#settingicon{
-    font-size: 3.5vh;
-    color: #90e0ef;
-}
-#darkmodeicon{
-    font-size: 3.5vh;
-    color: #90e0ef;
-}
-/* buttons*/
-#logoutbutton{
-    background-color: black;
-    color: #90e0ef;
+
+#logoutbutton {
+    background-color: #F0F2F5; /* light grey */
+    color: #556EE6; /* accent color */
     border-radius: 50%;
     padding: 1vh;
     position: absolute;
     top: 90%;
     left: 1%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
+    border: none;
 }
 
-@media (max-width:1200px) {
-    .sidebar{
-        width:25vw;
+/* RESPONSIVENESS */
+@media (max-width: 1200px) {
+    .sidebar {
+        width: 25vw;
     }
 }
 
-@media (max-width:900px) {
-    .sidebar{
-        width:30vw;
+@media (max-width: 900px) {
+    .sidebar {
+        width: 30vw;
     }
-}
-
-@media (max-width:700px) {
-    .sidebar{
-        width:35vw;
-    }
-    #searchbar{
-        margin:0.3vw;
+    #searchbar {
         width: 90%;
     }
 }
 
-
-@media (max-width:600px) {
-    .sidebar{
-        width:100vw;
-       min-height: 100vh;
+@media (max-width: 700px) {
+    .sidebar {
+        width: 35vw;
     }
-    .chatsection{
+    #searchbar {
+        width: 90%;
+    }
+}
+
+@media (max-width: 600px) {
+    .sidebar {
+        width: 100vw;
+        min-height: 100vh;
+    }
+    .chatsection {
         display: none;
     }
-    #searchbar{
-        width: 70vw;
-        padding: 1.5vh;
+    #searchbar {
+        width: 85vw;
+        padding: 1.5vh 1.5vh 1.5vh 35px;
     }
 }
