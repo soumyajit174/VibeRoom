@@ -20,7 +20,7 @@ A simple **real-time chat application** built using **Node.js, Express, Socket.I
 
 1️⃣ **Clone the repository:**
 ```bash
-git clone https://github.com/ajdevx/ChatApp.git
+git clone https://github.com/soumyajit174/VibeRoom.git
 cd ChatApp
 
 npm install
